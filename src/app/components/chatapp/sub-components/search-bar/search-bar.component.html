@@ -1,0 +1,14 @@
+
+<h1>search bar module</h1>
+<div>
+    <div *ngFor="let requestObj of friendrequests; let index = index">
+        <p> {{requestObj.friendRequest.message}}
+            <p (click) = "responseToRequest('accept', requestObj.friendRequest._id)">accept</p>
+            <p (click) = "responseToRequest('reject', requestObj.friendRequest._id)">reject</p>
+    </div>
+    <div class="friend-list">
+        <div *ngFor="let friendObj of friends; let index = index" (click) = "selectChat(friendObj.friend._id)">
+            <p>{{friendObj.friend.username}}</p>
+        </div>
+    </div>
+</div>
